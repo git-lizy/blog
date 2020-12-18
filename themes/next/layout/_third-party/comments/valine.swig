@@ -1,5 +1,5 @@
 {%- set valine_uri = theme.vendors.valine or '//unpkg.com/valine/dist/Valine.min.js' %}
-
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('{{ valine_uri }}', () => {

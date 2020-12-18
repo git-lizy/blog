@@ -3,19 +3,23 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: Engtron
+subtitle: '颖创科技'
 description: ''
 keywords:
 author: John Doe
-language: en
+language: zh-Hans
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: http://engtron.com
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
+abbrlink:
+	alg: crc32   #算法： crc16(default) and crc32
+	rep: hex     #进制： dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -68,7 +72,12 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-category_map:
+category_map: 
+  随笔: essay
+  标签: tags
+  关于: about
+  归档: archives
+  分类: categories
 tag_map:
 
 # Metadata elements
@@ -113,4 +122,24 @@ plugins: hexo-generate-feed
 
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /favicon.io
+
+# 搜索功能
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+# 统计功能
+symbols_count_time:
+  symbols: true # 文章字数
+  time: true # 阅读时长
+  total_symbols: true # 所有文章总字数
+  total_time: true # 所有文章阅读中时长
+# hexo-tag-cloud
+tag_cloud:
+    textFont: Trebuchet MS, Helvetica
+    textColor: '#333'
+    textHeight: 25
+    outlineColor: '#E2E1D1'
+    maxSpeed: 0.1
 

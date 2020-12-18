@@ -48,31 +48,32 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
   # Show multilingual switcher in footer.
-language_switcher: false
+language_switcher: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2015
 
   # Icon between year and copyright info.
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/icons
-    name: fa fa-heart
+    name: fa fa-star
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
     color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
+    enable: true
 
   # Powered by Hexo & NexT
-  powered: true
+  powered: false
 
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
     enable: false
-    icp:
+    icp: 
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
@@ -117,18 +118,18 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
-  schedule: /schedule/ || fa fa-calendar
-  sitemap: /sitemap.xml || fa fa-sitemap
-  commonweal: /404/ || fa fa-heartbeat
-
+  about: /about/ || fa fa-user
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+  essay: /essay/ || fas fa-feather-alt
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -151,7 +152,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
+  display: always
 
   # Sidebar padding in pixels.
   padding: 18
@@ -165,7 +166,7 @@ avatar:
   # Replace the default image and set the url here.
   url: /images/avatar.gif
   # If true, the avatar will be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
   rotated: false
 
@@ -181,16 +182,16 @@ social:
   E-Mail: engtron.engtron@gmail.com || fa fa-envelope
   Weibo: https://weibo.com/ || fab fa-weibo
   Google: https://plus.google.com/ || fab fa-google
-  Twitter: https://twitter.com/ || fab fa-twitter
-  FB Page: https://www.facebook.com/ || fab fa-facebook
-  StackOverflow: https://stackoverflow.com/ || fab fa-stack-overflow
-  YouTube: https://youtube.com/ || fab fa-youtube
-  Instagram: https://instagram.com/ || fab fa-instagram
+  #Twitter: https://twitter.com/ || fab fa-twitter
+  #FB Page: https://www.facebook.com/ || fab fa-facebook
+  #StackOverflow: https://stackoverflow.com/ || fab fa-stack-overflow
+  #YouTube: https://youtube.com/ || fab fa-youtube
+  #Instagram: https://instagram.com/ || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
@@ -201,8 +202,8 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://yoursite.com
-
+  linux: https://linux.imzlp.me/
+  UE4: https://ue4wiki.imzlp.me/
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
 toc:
@@ -210,7 +211,7 @@ toc:
   # Automatically add list number to toc.
   number: true
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false
   # Maximum heading depth of generated toc.
@@ -230,7 +231,7 @@ chat:
 # Post Settings
 # See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
-
+post:
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
@@ -262,8 +263,8 @@ tag_icon: false
 reward_settings:
   # If true, reward will be displayed in every article by default.
   enable: false
-  animation: false
-  #comment: Donate comment here.
+  animation: true
+  comment: "您的捐赠将鼓励我继续创作！"
 
 reward:
   #wechatpay: /images/wechatpay.png
@@ -277,7 +278,7 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  RSS: /atom.xml || fa fa-rss
+  #RSS: /atom.xml || fa fa-rss
   # Set rss to false to disable feed link.
   # # Leave rss as empty to use site's feed link.
   # # Set rss to specific value if you have burned your feed already.
@@ -358,24 +359,25 @@ codeblock:
   # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
   # See: https://github.com/chriskempson/tomorrow-theme
   highlight_theme: normal
+  border_radius: 8   # 按钮圆滑度
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
     style:
 
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: false
+  sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -414,7 +416,7 @@ font:
   enable: false
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
+  host: fonts.useso.com
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -515,7 +517,7 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-pjax: true
+pjax:
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox
@@ -569,22 +571,22 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
-  active:
+  active: valine
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: false
+  lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
-    #disqus:
-    #  text: Load Disqus
-    #  order: -1
-    #gitalk:
-    #  order: -2
+    disqus:
+      text: Load Disqus
+      order: -1
+    gitalk:
+      order: -2
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname:
   count: true
   #post_meta_order: 0
@@ -613,20 +615,20 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
+  enable: true
+  appid: 
+  appkey: 
   notify: false # Mail notifier
   verify: false # Verification code
-  placeholder: Just go go # Comment box placeholder
+  placeholder: '&#x270d;写评论' # Comment box placeholder
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
   language: # Language, available values: en, zh-cn
-  visitor: false # Article reading statistic
+  visitor: true # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
-  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  serverURLs: https://avoscloud.com/1.1/classes/Comment # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
 
 # LiveRe comments system
@@ -658,8 +660,8 @@ gitalk:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     # <app_id>
-  color:  fc6423
+  #id: engtron    # <app_id>
+  #color:  fc6423
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
@@ -685,7 +687,7 @@ baidu_analytics: # <app_id>
 growingio_analytics: # <project_id>
 
 # CNZZ count
-cnzz_siteid:
+cnzz_siteid: true
 
 # Show number of visitors of each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
@@ -693,8 +695,8 @@ cnzz_siteid:
 # Do not enable both `valine.visitor` and `leancloud_visitors`.
 leancloud_visitors:
   enable: false
-  app_id: # <your app id>
-  app_key: # <your app key>
+  app_id: engtron
+  app_key: engtron # <your app key>
   # Required for apps from CN region
   server_url: # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
@@ -742,7 +744,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
@@ -800,7 +802,7 @@ note:
 # Tabs tag
 tabs:
   transition:
-    tabs: false
+    tabs: true
     labels: true
 
 # PDF tag
@@ -808,13 +810,13 @@ tabs:
 # So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
-  enable: false
+  enable: true
   # Default height
   height: 500px
 
 # Mermaid tag
 mermaid:
-  enable: false
+  enable: true
   # Available themes: default | dark | forest | neutral
   theme: forest
 
@@ -858,9 +860,9 @@ pace:
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
   enable: false
-  three_waves: false
-  canvas_lines: false
-  canvas_sphere: false
+  #three_waves: true
+  #canvas_lines: true
+  #canvas_sphere: true
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
@@ -1008,9 +1010,23 @@ images: images
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
     enable: true
+# Declare license on posts
+post_copyright:
+  enable: true
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 # Post wordcount display settings
 # # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
     item_text: true
-    wordcount: true
-    min2read: true
+    wordcount: true #单篇文章字数
+    min2read: true #单篇阅读时长
+    totalcount: true #站点总字数
+    separated_meta: true
+# Share
+jiathis: 
+  enable: true
+# 阅读全文
+auto_excerpt:
+      enable: false
+      length: 150

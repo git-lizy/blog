@@ -45,7 +45,11 @@
           {%- set date_diff = date(post.date) != date(post.updated) %}
           {%- set time_diff = time(post.date) != time(post.updated) %}
           {%- set datetime_diff = date_diff or time_diff %}
-
+          {% if post.top %}
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>置顶</font>
+            <span class="post-meta-divider">|</span>
+          {% endif %}
           {%- if theme.post_meta.created_at %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -71,7 +75,7 @@
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">{{ __('post.edited') }}</span>
+                <span class="post-meta-item-text">{{ __('post.modified') }}</span>
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{{ date(post.updated) }}</time>
               </span>
             {%- endif %}
@@ -103,7 +107,7 @@
                 <i class="fa fa-eye"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span class="leancloud-visitors-count"></span><span>℃ </span>
+              <span class="leancloud-visitors-count"></span><span>℃</span>
             </span>
           {%- endif %}
 
@@ -222,9 +226,11 @@
         {{ partial('_partials/post/post-reward.swig') }}
       {%- endif %}
 
- 	 {% if not is_index %}
-    		{% include 'passage-end-tag.swig' %}
- 	{% endif %}
+ 	    <div>
+          {% if not is_index %}
+          {% include 'passage-end-tag.swig' %}
+          {% endif %}
+      </div>
 
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
         {{ partial('_partials/post/post-copyright.swig') }}
@@ -247,7 +253,7 @@
           {%- endif %}
           <div class="post-tags">
             {%- for tag in post.tags.toArray() %}
-              <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
+              <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i>{{ tag_indicate }} {{ tag.name }}</a>
             {%- endfor %}
           </div>
         {%- endif %}
