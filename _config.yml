@@ -115,7 +115,7 @@ deploy:
   type: ''
 
 # config文件路径
-onlineConfigPath: '../config/config.json'
+onlineConfigPath: ''
 # Extensions
 # ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
