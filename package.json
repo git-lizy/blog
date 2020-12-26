@@ -46,12 +46,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "http://192.168.0.124/root/blog.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp-imagemin": "^7.1.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-optipng": "^8.0.0"
   },
